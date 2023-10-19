@@ -11,6 +11,8 @@ BINOM_T binom(BINOM_T n, BINOM_T k) {
     if (n == 0) return 0;
     if (n < k) return 0;
 
+    k = k < n - k ? k : n - k;
+
     BINOM_T dp[k + 1];
     dp[0] = 1;
     for (BINOM_T x = 1; x <= k; x++) {
